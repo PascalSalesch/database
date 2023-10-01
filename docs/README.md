@@ -6,6 +6,7 @@
 
 ## Prerequisites
 
+- [Node](https://nodejs.org/en/)
 - [PostgreSQL](https://www.postgresql.org/)
 
 
@@ -64,7 +65,7 @@ You can do this by creating a personal access token (`NODE_AUTH_TOKEN`) and then
 @pascalsalesch:registry=https://npm.pkg.github.com
 ```
 
-Then you can install the package with `npm install @pascalsalesch/pages`.
+Then you can install the package with `npm install @pascalsalesch/database`.
 
 
 
