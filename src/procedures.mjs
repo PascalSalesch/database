@@ -3,6 +3,7 @@
  */
 
 import * as fs from 'node:fs'
+import * as url from 'node:url'
 import * as path from 'node:path'
 
 import utils from './utils.mjs'
@@ -50,7 +51,7 @@ async function getAllProcedures () {
     const name = path.basename(file, ext)
 
     if (config.PROCEDURE_EXTENSIONS.includes(ext)) {
-      allProcedures[name] = (await import(file)).default
+      allProcedures[name] = (await import(url.pathToFileURL(file).href)).default
     } else {
       const content = await fs.promises.readFile(file, { encoding: 'utf-8' })
       const sql = await parse(content)
