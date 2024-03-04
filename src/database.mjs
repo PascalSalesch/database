@@ -42,5 +42,13 @@ await procedures(pool)
 // create and update the database schema
 await setup(pool)
 
+// always use the schema from environment
+const connect = pool.connect.bind(pool)
+pool.connect = async () => {
+  const db = await connect()
+  if (process.env.PGSCHEMA) await db.query(`SET search_path TO "${process.env.PGSCHEMA}";`)
+  return db
+}
+
 // export the connection
 export default pool
