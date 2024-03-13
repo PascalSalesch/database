@@ -35,7 +35,7 @@ export const DB_PROCEDURES_FOLDERS = ['procedures']
  * The database file extensions.
  * @type {string[]}
  */
-export const FILE_EXTENSIONS = ['.psql', '.sql']
+export const FILE_EXTENSIONS = ['.pgsql', '.psql', '.sql']
 
 /**
  * The database procedure file extensions.
